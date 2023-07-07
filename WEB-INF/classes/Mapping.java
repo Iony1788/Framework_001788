@@ -1,4 +1,4 @@
-package etu1788;
+package etu1788.framework.servlet;
 public class Mapping {
 
     private String className;
