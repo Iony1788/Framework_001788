@@ -2,7 +2,6 @@
 package etu1788.framework.servlet;
 import java.io.IOException;
 import java.util.HashMap;
-import etu1788.*;
 import java.lang.reflect.InvocationTargetException;
 
 import jakarta.servlet.ServletException;
