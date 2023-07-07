@@ -1,4 +1,5 @@
-package etu1788.framework.servlet;
+package etu1788.framework;
+
 import java.util.HashMap;
 
 public class ModelView {
@@ -7,6 +8,10 @@ public class ModelView {
 
     public ModelView() {
         this.data = new HashMap<>();
+    }
+
+    public void addItem(String key, Object value) {
+        this.data.put(key, value);
     }
 
     public String getView() {
@@ -21,4 +26,7 @@ public class ModelView {
         return data;
     }
 
+    public void setData(HashMap<String, Object> data) {
+        this.data = data;
+    }
 }

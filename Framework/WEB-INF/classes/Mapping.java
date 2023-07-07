@@ -1,6 +1,7 @@
-package etu1788.framework.servlet;
-public class Mapping {
+package etu1788.framework;
 
+
+public class Mapping {
     private String className;
     private String method;
 
@@ -16,5 +17,4 @@ public class Mapping {
     public void setMethod(String method) {
         this.method = method;
     }
-    
 }

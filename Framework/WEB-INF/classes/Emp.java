@@ -1,8 +1,12 @@
-package etu1788.framework.servlet;
+package model;
 import etu1788.framework.UrlMapping;
-import model.*;
 import java.util.HashMap;
 import java.util.Vector;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.ServletException;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class Emp {
     int id;
@@ -45,63 +49,17 @@ public class Emp {
         this.name = name;
     }
     
-    @UrlMapping(url="emp-all.do")
-    public ModelView findAll(){
-        ModelView mv = new ModelView();
-        mv.setView("/emp-list.jsp");
-            
-        Vector<Emp> emp = new Vector<>();
-        emp.add(new Emp("Rakoto"));    
-        emp.add(new Emp("Rabe"));
-        emp.add(new Emp("Rasoa"));
-
-        mv.addItem("list", emp);        
-        mv.addItem("liste", new Emp("Rasoa"));
-        
-        return mv;
-    }
-
-    @UrlMapping(url="formulaire.do")
-    public ModelView formulaire(){
-        ModelView mv = new ModelView();
-        mv.setView("formulaire.jsp");
-        return mv;
-    }
-
-    @UrlMapping(url="save.do")
-    public ModelView save(){
-        ModelView mv = new ModelView();
-
-        // System.out.println("nom 1:"+this.getNom());
-        mv.addItem("nom",this.getName());
-        mv.addItem("prenom",this.getFirstname());
-        
-        mv.setView("/save.jsp");
-
-        return mv;
-    }
+   
     
-    @UrlMapping(url = "getEmp.do")
-    public ModelView getEmp(String nom){
-        ModelView mv = new ModelView();
-        Vector<Emp> emp = new Vector<>();
-        emp.add(new Emp(1,"Rakoto","malala"));    
-        emp.add(new Emp(2,"Rabe","Haja"));
-        emp.add(new Emp(3,"Rasoa","Ngita"));
+    public String test() {
+        return "mety anie io";
+    }
 
-        mv.setView("/fiche.jsp");
-        for (Emp emp2 : emp) {
-            // if(emp2.id == id){
-            //     mv.addItem("emp", emp2);
-            // }
-            if(nom.equalsIgnoreCase(emp2.getName())){
-                mv.addItem("emp", emp2);
-            }
-        }
-        
-        
-        return mv;
+    @UrlMapping(url="page_test.do")
+    public void andrana(){
+        System.out.println("mety");
     }
-    public Emp() {
-    }
+public Emp() {}
+    
 }
+
